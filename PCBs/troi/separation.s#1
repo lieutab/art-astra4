@@ -441,6 +441,71 @@
 </deviceset>
 </devicesets>
 </library>
+<library name="494-8906">
+<description>&lt;2 Way PCB Screw Terminal&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="SHDR2W100P0X500_1X2_1000X750X1">
+<description>&lt;b&gt;494-8906&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="0" y="0" drill="1.2" diameter="1.8" shape="square"/>
+<pad name="2" x="5" y="0" drill="1.2" diameter="1.8"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-2.75" y1="-4.25" x2="-2.75" y2="3.75" width="0.05" layer="51"/>
+<wire x1="-2.75" y1="3.75" x2="7.75" y2="3.75" width="0.05" layer="51"/>
+<wire x1="7.75" y1="3.75" x2="7.75" y2="-4.25" width="0.05" layer="51"/>
+<wire x1="7.75" y1="-4.25" x2="-2.75" y2="-4.25" width="0.05" layer="51"/>
+<wire x1="-2.5" y1="-4" x2="-2.5" y2="3.5" width="0.1" layer="51"/>
+<wire x1="-2.5" y1="3.5" x2="7.5" y2="3.5" width="0.1" layer="51"/>
+<wire x1="7.5" y1="3.5" x2="7.5" y2="-4" width="0.1" layer="51"/>
+<wire x1="7.5" y1="-4" x2="-2.5" y2="-4" width="0.1" layer="51"/>
+<wire x1="0" y1="-4" x2="7.5" y2="-4" width="0.2" layer="21"/>
+<wire x1="7.5" y1="-4" x2="7.5" y2="3.5" width="0.2" layer="21"/>
+<wire x1="7.5" y1="3.5" x2="-2.5" y2="3.5" width="0.2" layer="21"/>
+<wire x1="-2.5" y1="3.5" x2="-2.5" y2="0" width="0.2" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="494-8906">
+<wire x1="5.08" y1="2.54" x2="15.24" y2="2.54" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="2.54" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<text x="16.51" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="16.51" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="1" x="0" y="0" length="middle"/>
+<pin name="2" x="0" y="-2.54" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="494-8906" prefix="J">
+<description>&lt;b&gt;2 Way PCB Screw Terminal&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="494-8906" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SHDR2W100P0X500_1X2_1000X750X1">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="2 Way PCB Screw Terminal" constant="no"/>
+<attribute name="HEIGHT" value="10mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="RS Components" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="494-8906" constant="no"/>
+<attribute name="RS_PART_NUMBER" value="" constant="no"/>
+<attribute name="RS_PRICE-STOCK" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -457,6 +522,8 @@
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SERVO_PINS" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="BATTERY_TERMINAL" library="494-8906" deviceset="494-8906" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -467,9 +534,9 @@
 <attribute name="NAME" x="74.93" y="92.075" size="1.778" layer="95"/>
 <attribute name="VALUE" x="74.93" y="68.58" size="1.778" layer="96"/>
 </instance>
-<instance part="MCU-R" gate="A" x="109.22" y="81.28" smashed="yes">
-<attribute name="NAME" x="102.87" y="92.075" size="1.778" layer="95"/>
-<attribute name="VALUE" x="102.87" y="68.58" size="1.778" layer="96"/>
+<instance part="MCU-R" gate="A" x="109.22" y="81.28" smashed="yes" rot="MR0">
+<attribute name="NAME" x="115.57" y="92.075" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="115.57" y="68.58" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="+3V1" gate="G$1" x="93.98" y="83.82" smashed="yes" rot="R90">
 <attribute name="VALUE" x="93.98" y="83.82" size="1.778" layer="96" rot="R180"/>
@@ -483,6 +550,13 @@
 </instance>
 <instance part="GND2" gate="1" x="7.62" y="53.34" smashed="yes" rot="R270">
 <attribute name="VALUE" x="5.08" y="55.88" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="BATTERY_TERMINAL" gate="G$1" x="5.08" y="27.94" smashed="yes">
+<attribute name="NAME" x="21.59" y="35.56" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="21.59" y="33.02" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="GND3" gate="1" x="-5.08" y="15.24" smashed="yes">
+<attribute name="VALUE" x="-7.62" y="12.7" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -540,14 +614,14 @@
 <net name="VCC" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="1"/>
-<wire x1="106.68" y1="88.9" x2="96.52" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="88.9" x2="96.52" y2="88.9" width="0.1524" layer="91"/>
 <label x="96.52" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="2"/>
-<wire x1="106.68" y1="86.36" x2="96.52" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="86.36" x2="96.52" y2="86.36" width="0.1524" layer="91"/>
 <label x="96.52" y="86.36" size="1.778" layer="95"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 </segment>
@@ -556,39 +630,47 @@
 <wire x1="27.94" y1="53.34" x2="10.16" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="BATTERY_TERMINAL" gate="G$1" pin="2"/>
+<wire x1="5.08" y1="25.4" x2="-5.08" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="25.4" x2="-5.08" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="-5.08" y1="17.78" x2="-5.08" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-5.08" y="17.78"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="3"/>
-<wire x1="106.68" y1="83.82" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="83.82" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="4"/>
-<wire x1="106.68" y1="81.28" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="81.28" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
 <label x="96.52" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MISO" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="5"/>
-<wire x1="106.68" y1="78.74" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="78.74" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
 <label x="96.52" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCK" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="6"/>
-<wire x1="106.68" y1="76.2" x2="96.52" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="76.2" x2="96.52" y2="76.2" width="0.1524" layer="91"/>
 <label x="96.52" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="7"/>
-<wire x1="106.68" y1="73.66" x2="96.52" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="73.66" x2="96.52" y2="73.66" width="0.1524" layer="91"/>
 <label x="96.52" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -606,6 +688,11 @@
 <wire x1="27.94" y1="50.8" x2="10.16" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="50.8" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
 <label x="10.16" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="BATTERY_TERMINAL" gate="G$1" pin="1"/>
+<wire x1="5.08" y1="27.94" x2="-5.08" y2="27.94" width="0.1524" layer="91"/>
+<label x="-5.08" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
