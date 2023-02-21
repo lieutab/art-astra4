@@ -8073,18 +8073,17 @@ naming: grid - package width</description>
 <part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SERVO_PINS" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
-<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="BATTERY_TERMINAL" library="494-8906" deviceset="494-8906" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q1" library="SamacSys_Parts" deviceset="IRLZ24NPBF" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2"/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="220k"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="220k "/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="120k"/>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC1" library="SamacSys_Parts" deviceset="L7805ACV" device="" package3d_urn="urn:adsk.eagle:package:34276127/2"/>
-<part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="330NF"/>
+<part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="330nF"/>
 <part name="C2" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="100nF"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="D2" library="SamacSys_Parts" deviceset="1N5819" device=""/>
@@ -8113,9 +8112,6 @@ naming: grid - package width</description>
 <instance part="SERVO_PINS" gate="A" x="30.48" y="53.34" smashed="yes">
 <attribute name="NAME" x="24.13" y="59.055" size="1.778" layer="95"/>
 <attribute name="VALUE" x="24.13" y="45.72" size="1.778" layer="96"/>
-</instance>
-<instance part="GND2" gate="1" x="7.62" y="53.34" smashed="yes" rot="R270">
-<attribute name="VALUE" x="5.08" y="55.88" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="BATTERY_TERMINAL" gate="G$1" x="17.78" y="27.94" smashed="yes">
 <attribute name="NAME" x="34.29" y="35.56" size="1.778" layer="95" align="center-left"/>
@@ -8187,25 +8183,17 @@ naming: grid - package width</description>
 <label x="68.58" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="A1" class="0">
-<segment>
-<pinref part="MCU-L" gate="A" pin="2"/>
-<wire x1="78.74" y1="86.36" x2="68.58" y2="86.36" width="0.1524" layer="91"/>
-<label x="68.58" y="86.36" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="A2" class="0">
+<net name="SERVO" class="0">
 <segment>
 <pinref part="MCU-L" gate="A" pin="3"/>
 <wire x1="78.74" y1="83.82" x2="68.58" y2="83.82" width="0.1524" layer="91"/>
 <label x="68.58" y="83.82" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="A3" class="0">
 <segment>
-<pinref part="MCU-L" gate="A" pin="4"/>
-<wire x1="78.74" y1="81.28" x2="68.58" y2="81.28" width="0.1524" layer="91"/>
-<label x="68.58" y="81.28" size="1.778" layer="95"/>
+<pinref part="SERVO_PINS" gate="A" pin="3"/>
+<wire x1="27.94" y1="50.8" x2="10.16" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="50.8" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
+<label x="12.7" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -8242,8 +8230,8 @@ naming: grid - package width</description>
 <net name="VCC" class="0">
 <segment>
 <pinref part="MCU-R" gate="A" pin="1"/>
-<wire x1="111.76" y1="88.9" x2="129.54" y2="88.9" width="0.1524" layer="91"/>
-<label x="124.46" y="88.9" size="1.778" layer="95"/>
+<wire x1="111.76" y1="88.9" x2="139.7" y2="88.9" width="0.1524" layer="91"/>
+<label x="139.7" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="D2" gate="G$1" pin="K"/>
@@ -8259,11 +8247,6 @@ naming: grid - package width</description>
 <pinref part="MCU-R" gate="A" pin="2"/>
 <wire x1="111.76" y1="86.36" x2="137.16" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="SERVO_PINS" gate="A" pin="2"/>
-<wire x1="27.94" y1="53.34" x2="10.16" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="BATTERY_TERMINAL" gate="G$1" pin="2"/>
@@ -8348,12 +8331,6 @@ naming: grid - package width</description>
 </net>
 <net name="VBAT" class="0">
 <segment>
-<pinref part="SERVO_PINS" gate="A" pin="3"/>
-<wire x1="27.94" y1="50.8" x2="10.16" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="50.8" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
-<label x="10.16" y="43.18" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="BATTERY_TERMINAL" gate="G$1" pin="1"/>
 <wire x1="17.78" y1="27.94" x2="7.62" y2="27.94" width="0.1524" layer="91"/>
 <label x="10.16" y="33.02" size="1.778" layer="95"/>
@@ -8372,6 +8349,11 @@ naming: grid - package width</description>
 <wire x1="101.6" y1="25.4" x2="101.6" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <label x="109.22" y="35.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SERVO_PINS" gate="A" pin="2"/>
+<wire x1="27.94" y1="53.34" x2="5.08" y2="53.34" width="0.1524" layer="91"/>
+<label x="2.54" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -8394,6 +8376,11 @@ naming: grid - package width</description>
 <pinref part="R1" gate="G$1" pin="1"/>
 <label x="35.56" y="104.14" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="MCU-L" gate="A" pin="4"/>
+<wire x1="78.74" y1="81.28" x2="68.58" y2="81.28" width="0.1524" layer="91"/>
+<label x="68.58" y="81.28" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VSENSE" class="0">
 <segment>
@@ -8407,6 +8394,11 @@ naming: grid - package width</description>
 <wire x1="35.56" y1="-17.78" x2="35.56" y2="-20.32" width="0.1524" layer="91"/>
 <junction x="35.56" y="-17.78"/>
 <label x="33.02" y="-5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="MCU-L" gate="A" pin="2"/>
+<wire x1="78.74" y1="86.36" x2="68.58" y2="86.36" width="0.1524" layer="91"/>
+<label x="68.58" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
